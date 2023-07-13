@@ -1,0 +1,22 @@
+---
+- name: install Jenkins and Java on Machine-1
+  become: true
+  hosts: localhost
+  tasks: 
+  - name: running script1
+    script: script1.sh
+
+- name: install K8s,Docker and Java on Machine-3
+  become: true
+  hosts: master
+  tasks:
+  - name: running script2
+    script: script2.sh
+
+- name: install Jenkins K8s and Docker on Machine-2and4
+  become: true
+  hosts: slaves
+  tasks:
+  - name: running script3
+    script: script3.sh
+ 
